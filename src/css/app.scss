@@ -1,1 +1,109 @@
 // app global css in SCSS form
+/* ============================
+   PALETA DE ORO GLOBAL
+   ============================ */
+
+$gold-main: #d4af37;
+$gold-light: #f5e076;
+$gold-dark: #b08d2c;
+$gold-glow: rgba(212, 175, 55, 0.45);
+
+$gold-bg-soft: rgba(255, 215, 0, 0.07);
+$gold-bg-hover: rgba(255, 215, 0, 0.2);
+
+$gold-border: rgba(255, 215, 0, 0.2);
+$gold-border-strong: rgba(255, 215, 0, 0.4);
+
+/* ============================
+   EFECTOS GLOBALES
+   ============================ */
+body {
+  font-family: 'Elms Sans', sans-serif;
+}
+a {
+  color: $gold-main;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $gold-light;
+    text-decoration: underline;
+  }
+}
+button {
+  font-family: 'Elms Sans', sans-serif;
+}
+input,
+textarea {
+  font-family: 'Elms Sans', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Elms Sans', sans-serif;
+}
+/* ============================
+   ESTILOS GLOBALES DE QUASAR
+   ============================ */
+.custom-card {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  min-width: 200px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.q-layout q-layout--standard {
+  background-color: #f4eee038 !important;
+}
+
+/* Botones tabs */
+.tab-button {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 6px 14px;
+  transition: 0.25s ease;
+}
+
+/* Hover dorado */
+.tab-button:hover {
+  background: linear-gradient(90deg, #d97706, #ffc003);
+  transform: translateY(-2px);
+}
+
+/* Iconos dentro de los botones */
+.tab-button .q-icon {
+  color: black;
+}
+.border-gray {
+  border: 2px solid rgba(128, 128, 128, 0.534);
+  border-radius: 10px;
+  padding: 6px 14px;
+}
+/* Título con gradiente dorado */
+.text-title {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #ffc003, #d97706);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Subtítulo más grande y elegante */
+.text-subtitle {
+  font-size: 2.3rem;
+  color: #5f5f5f;
+  font-weight: 500;
+}
+.bg-page {
+  background-color: #f4eee038 !important;
+  padding-top: 0px !important;
+}
