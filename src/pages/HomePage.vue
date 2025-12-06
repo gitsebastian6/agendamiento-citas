@@ -33,13 +33,13 @@ const tutorialSteps = ref([
 ])
 </script>
 <style>
-.text-title-big {
+/* .text-title-big {
   font-size: 8rem;
   background: linear-gradient(90deg, #ffc003, #d97706);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 900;
-}
+} */
 
 /* Subtítulo centrado y más consistente */
 .text-subtitle {
@@ -92,6 +92,7 @@ const tutorialSteps = ref([
   .text-title-big {
     font-size: 6rem;
   }
+
   .text-subtitle {
     font-size: 1.2rem;
   }
@@ -102,6 +103,7 @@ const tutorialSteps = ref([
   .text-title-big {
     font-size: 4.2rem;
   }
+
   .text-subtitle {
     font-size: 1.1rem;
   }
@@ -112,10 +114,12 @@ const tutorialSteps = ref([
   .text-title-big {
     font-size: 3rem;
   }
+
   .text-subtitle {
     font-size: 1rem;
   }
 }
+
 /* .q-btn--outline:before {
   border-radius: 0px;
 } */

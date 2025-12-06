@@ -6,33 +6,44 @@
       <q-input filled v-model="username" label="Usuario" />
       <q-input filled v-model="password" type="password" label="Contraseña" />
 
-      <q-btn class="login-btn" label="Ingresar" to="/dashboard" unelevated no-caps />
-      <q-btn class="back-btn" label="Volver al inicio" to="/home" no-caps />
+      <q-btn class="login-btn" label="Ingresar" @click="login" unelevated no-caps />
+      <q-btn class="back-btn" label="Volver al inicio" @click="back" unelevated no-caps />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+/*Redirige al dashboard de la sección de administración*/
+function login() {
+  router.push('/admin/dashboard')
+}
+/*Redirige a la página de inicio*/
+function back() {
+  router.push('/home')
+}
 
 const username = ref('')
 const password = ref('')
 </script>
 
-<style>
-/* Fondo completo centrado */
+<style scoped>
+/* Fondo centrado (no usar height:100vh para evitar romper layouts posteriores) */
 .login-container {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   background: #f8fafc;
   padding: 16px;
 }
 
-/* Card principal */
+/* Card */
 .login-card {
   width: 100%;
-  max-width: 520px; /* más grande y profesional */
+  max-width: 520px;
   background: white;
   padding: 48px 40px;
   border-radius: 18px;
@@ -43,19 +54,19 @@ const password = ref('')
   box-sizing: border-box;
 }
 
-/* Título profesional en una sola línea */
+/* Titulo */
 .login-title {
   font-size: 1.8rem;
   font-weight: 800;
   color: #334155;
   text-align: center;
-  white-space: nowrap; /* fuerza una sola línea */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* seguridad en pantallas MUY pequeñas */
+  text-overflow: ellipsis;
   margin-bottom: 10px;
 }
 
-/* Botón dorado profesional */
+/* Botón principal */
 .login-btn {
   background: linear-gradient(90deg, #d97706, #ffc003);
   color: black;
@@ -80,6 +91,7 @@ const password = ref('')
   font-weight: 600;
   width: 100%;
 }
+
 .back-btn:hover {
   transform: translateY(-2px);
 }
@@ -105,9 +117,5 @@ const password = ref('')
   .login-title {
     font-size: 1.4rem;
   }
-}
-.q-field__control {
-  font-size: 1rem;
-  color: #d97706;
 }
 </style>
